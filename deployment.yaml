@@ -7,11 +7,11 @@ Parameters:
     Type: String
 
 Resources:
-  lambdaDeploys3Bucket:
-    Type: AWS::S3::Bucket
-    Properties: 
-      AccessControl: Private
-      BucketName: poc-cloudformation-packages-wc
+  # lambdaDeploys3Bucket:
+  #   Type: AWS::S3::Bucket
+  #   Properties: 
+  #     AccessControl: Private
+  #     BucketName: poc-cloudformation-packages-wc
 
   lambdaFunctioniamRole:
     Type: AWS::IAM::Role
@@ -49,7 +49,7 @@ Resources:
         Variables:
           key1: value1 # A map of key-value pairs that the Lambda function can access
       Code:
-        S3Bucket: !Ref lambdaDeploys3Bucket
+        S3Bucket: poc-cloudformation-packages-wc
         S3Key: lambda.zip
       Tags:
         - Key: keyname
