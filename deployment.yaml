@@ -15,7 +15,7 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              Services: lambda.amazonaws.com
+              Service: lambda.amazonaws.com
             Action: sts:AssumeRole
       Policies:
         - PolicyName: "poc-cloudformation-lambda-policy"
