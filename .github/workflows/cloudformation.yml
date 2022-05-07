@@ -67,9 +67,10 @@ jobs:
       - name: Deploy to AWS CloudFormation
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-          name: poc-cloudformation
+          name: poc-cloudformation-test
           template: artifact/deployment.yaml
           parameter-overrides: "Environment=-Test"
+          no-fail-on-empty-changeset: "1"
 
   prod-deploy:
     runs-on: ubuntu-latest
@@ -92,6 +93,7 @@ jobs:
       - name: Deploy to AWS CloudFormation
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-          name: poc-cloudformation
+          name: poc-cloudformation-prod
           template: artifact/deployment.yaml
           parameter-overrides: "Environment=-Prod"
+          no-fail-on-empty-changeset: "1"
