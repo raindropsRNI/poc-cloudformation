@@ -67,7 +67,7 @@ jobs:
       - name: Deploy to AWS CloudFormation
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-          name: poc cloudformation
+          name: poc_cloudformation
           template: artifact/deployment.yaml
           parameter-overrides: "Environment=-Test"
     
